@@ -1,4 +1,44 @@
+<input type="text" placeholder="Server Name" [(ngModel)]="ServerName">
+<!-- two ways binding -->
+
+<input type="text" placeholder="Server Name" name="" id="" [ngModel]="ServerName">
+<!-- one way binding -->
+<p>{{ServerName}}</p>
+<button>Submit</button>
+
+
+<p>{{ServerName}} with Pid {{ServerPID}} is {{ServerStatus}}</p>
+
+<button [disabled]="buttonState" (click)="toggleServerStatus()">Toggle </button>
+<button [disabled]="checkName()" (click)="resetServerStatus()">Reset </button>
+
 <h1>App components</h1>
 <app-server></app-server>
 
 <app-sub-server></app-sub-server>
+
+<h1 [ngStyle]="{color: getColor()}">This is an example of ngif</h1>
+
+<h2 [ngClass]="{'white': getColor()}">This is an example of nglcass</h2>
+
+<h3>Student Roster</h3>
+<li *ngFor="let name of studentRoster">{{name}}</li>
+
+<input type="text" name="" value="" placeholder="name" [(ngModel)]="currentName">
+
+<button (click)="add()">Submit Student Name</button>
+
+<p *ngIf="flag; else elseblock">Flag is True</p>
+
+<ng-template #elseblock>
+    <p id="false">Flag is false</p>
+</ng-template>
+
+<button (click)="toggleFlag()">Toggle Flag</button>
+
+<br>
+<br>
+<br>
+<p *ngIf="tdstate === true">lorem ipsum wieih owehfb weownhnq qwuqwb qw qe r  wed wd wedwe w2q weqeq sx df f sd sdwe we wq e sd edwsed we wd</p>
+<button (click)="toggleDisplay()"> Toggle display</button>
+<p *ngFor="let clicks of counter" [ngStyle]="{color: getlength()}">{{clicks}}</p>
